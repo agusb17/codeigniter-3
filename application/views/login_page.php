@@ -11,7 +11,7 @@
     <style> 
  
         body { 
-            background-image: url('https://wallpaperaccess.com/full/1952510.jpg'); 
+            background-image: url('https://foto.data.kemdikbud.go.id/getImage/69756199/1.jpg'); 
             background-size: cover;  
             background-repeat: no-repeat; 
             background-attachment: fixed;  
@@ -39,7 +39,7 @@
                 <div class="col-md-4"> 
                     <div class="card"> 
                         <div class="card-body"> 
-                            <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c4e7.png" alt="Logo" class="mb-4 logo"> 
+                            <img src="https://foto.data.kemdikbud.go.id/getImage/69756199/1.jpg" alt="Logo" class="mb-4 logo"> 
                             <h2 class="card-title text-center">Login</h2> 
                             <form method="post"> 
                                 <div class="mb-3"> 

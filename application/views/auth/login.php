@@ -1,63 +1,42 @@
-<!-- application/views/login.php --> 
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Login</title> 
-    <!-- Tambahkan link ke Bootstrap CSS --> 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"> 
- 
-    <style> 
- 
-        body { 
-            background-image: url('https://foto.data.kemdikbud.go.id/getImage/20328874/6.jpg'); 
-            background-size: cover;  
-            background-repeat: no-repeat; 
-            background-attachment: fixed;  
-        } 
-        .card-title { 
-            color: #fff; 
-        } 
-        .card { 
-            background-color: rgba(255, 255, 255, 0.3);  
-            padding: 20px; 
-        } 
-        .logo { 
-            max-width: 200px; 
-            height: auto;  
-            display: block;  
-            margin: 0 auto 40px;  
-        } 
- 
-    </style> 
-</head> 
-<body> 
-    <div class="min-vh-100 d-flex align-items-center"> 
-        <div class="container"> 
-            <div class="row justify-content-center"> 
-                <div class="col-md-4"> 
-                    <div class="card"> 
-                        <div class="card-body"> 
-                            <img src="https://binusasmg.sch.id/ppdb/logobinusa.png" alt="Logo" class="mb-4 logo"> 
-                            <h2 class="card-title text-center">Login</h2> 
-                            <form method="post"> 
-                                <div class="mb-3"> 
-                                    <input type="text" class="form-control" name="username" placeholder="Username" required> 
-                                </div> 
-                                <div class="mb-3"> 
-                                    <input type="password" class="form-control" name="password" placeholder="Password" required> 
-                                </div> 
-                                <div class="text-center"> 
-                                    <button type="submit" class="btn btn-primary">Login</button> 
-                                </div> 
-                            </form> 
-                        </div> 
-                    </div> 
-                </div> 
-            </div> 
-        </div> 
-    </div> 
-    <!-- Tambahkan script untuk Bootstrap JS jika diperlukan --> 
-</body> 
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+body { 
+        background-image: url("https://awsimages.detik.net.id/community/media/visual/2021/06/10/melihat-lagi-indahnya-gerhana-matahari-cincin-di-langit-dunia.jpeg?w=1200"); 
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+<body>
+  <form action="<?php echo base_url(); ?>auth/aksi_login" method="post" class="space-y-12">
+  <div class="space-y-4"> 
+  <div class="container ">
+
+    <div class="card mt-5 w-50 justify-content-center mx-auto bg-transparent">
+      <h5 class="card-header mx-auto text-white text-bold">Login</h5>
+      <div class="card-body">
+        <form action="connect_login.php" method="post">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label text-white text-bold " placeholder="Email Address" >Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Input your Email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text text-white text-bold">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label text-white text-bold" placeholder="password">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="input your password">
+          </div>
+          <div class="d-grid gap-2 col-6 mx-auto">
+          <button type="submit" class="btn btn-primary text-bg-info text-white text-bold">LOGIN</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </body>
+  </html>
