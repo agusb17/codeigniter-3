@@ -1,6 +1,4 @@
-<?php 
-include 'connect.php'
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,12 +16,6 @@ include 'connect.php'
 </head>
 
 <body>
-
-
-
-
-
-
     <button data-drawer-target=" default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar"
         type="button"
         class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -55,7 +47,7 @@ include 'connect.php'
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('admin/daftar_siswa') ?>"
+                    <a href="<?php echo base_url('admin/siswa') ?>"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -114,53 +106,55 @@ include 'connect.php'
                         <table class="table  table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">Nama </th>
-                                    <th scope="col">NISN </th>
-                                    <th scope="col"> Gender </th>
+                                    <th scope="col">no </th>
+                                    <th scope="col">nama </th>
+                                    <th scope="col"> nisn </th>
+                                    <th scope="col">gender</th>
+                                    <th scope="col">kelas</th>
                                     <th scope="col">Aksi</th>
+                                  
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                    $sql = "SELECT * FROM kartu_elektronik";
-                    $result = mysqli_query($conn, $sql);
-                    if ($result) {
-                        while ($data = mysqli_fetch_assoc($result)) {
-                            $id = $data['id'];
-                            $nama = $data['nama_lengkap'];
-                            $nisn = $data['NISN'];
-                            $gender = $data['Gender'];
-                            
-                            echo '<tr>
-                          <td>' . $nama . '</td>
-                          <td>' . $nisn . '</td>
-                          <td>' . $gender . '</td>
-                          
-                          <td class="text-center ">
-                          <a href="update.php?id=' . $id . '"class="btn btn-sm btn-warning text-dark">Update</a>
-                          
-                          <a href="delete.php?id=' . $id . '"class="btn btn-sm btn-warning text-dark">Delete</a>
-                          </td>
-                        
-                          </tr>';
-                        }
-                    }
-                    ?>
-
+                                <?php $no = 0;
+                                foreach ($siswa as $row):
+                                    $no++ ?>
+                                    <tr>
+                                        <td>
+                                            <?php echo $no ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->nama_siswa ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->nisn ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->gender ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $row->id_kelas ?>
+                                        </td>
+                                        <td class="text-center">
+                                            <a href="<?php echo base_url('admin/ubah_siswa'); ?>" class="btn btn-sm btn-primary">ubah</a>
+                                            <button onclick="hapus(<?php echo $row->id_siswa ?>)" class="btn btn-sm btn-danger">Delete
+                                            </button>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
-                        <button class="btn btn-sm btn-warning"><a href="create.php"
-                                class="btn text-dark">Tambah</a></button>
+                        <a  href="<?php echo base_url('admin/tambah_siswa'); ?>" class="btn btn-sm btn-warning">Tambah</a>
                     </div>
                     </form>
                     <script>
-                    function hapus(id) {
-                        var yes = confirm("Yakin Ingin Menghapus Data Anda")
-                        if (yes === true) {
-                            window.location.href = "delete.php?id=" + id;
-                        }
-                    }
-                    </script>
+        function hapus(id) {
+            var yes = confirm('Yakin DI Hapus?');
+            if (yes == true) {
+                window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id;
+            }
+        }
+    </script>
 
 
                 </div>
@@ -168,19 +162,9 @@ include 'connect.php'
 
         </div>
         <br>
-
+        
     </div>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
 </body>
-
 </html>
