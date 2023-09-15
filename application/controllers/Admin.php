@@ -30,7 +30,12 @@ class Admin extends CI_Controller
   $data['kelas'] = $this->m_model->get_data('kelas')->result();
   $this->load->view('admin/tambah_siswa', $data);
  }
-
+// ubah 
+public function ubah_siswa()
+{
+    $data['kelas'] = $this->m_model->get_data('kelas')->result();
+    $this->load->view('admin/ubah_siswa', $data);
+}
  // aksi tambah
  public function aksi_tambah_siswa()
  {
