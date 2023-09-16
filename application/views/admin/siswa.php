@@ -47,7 +47,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?php echo base_url('admin/siswa') ?>"
+                    <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa ?>"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                         <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
@@ -136,7 +136,7 @@
                                             <?php echo $row->id_kelas ?>
                                         </td>
                                         <td class="text-center">
-                                            <a href="<?php echo base_url('admin/ubah_siswa'); ?>" class="btn btn-sm btn-primary">ubah</a>
+                                            <a href="<?php echo base_url('admin/ubah_siswa/'). $row->id_siswa; ?>" class="btn btn-sm btn-primary">ubah</a>
                                             <button onclick="hapus(<?php echo $row->id_siswa ?>)" class="btn btn-sm btn-danger">Delete
                                             </button>
                                         </td>

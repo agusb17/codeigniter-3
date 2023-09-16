@@ -1,6 +1,6 @@
 <?php
 // untuk me nampilkan tingkat kelas byid
-function tampil_full_kleas_byid($id)
+function tampil_full_kelas_byid($id)
 {
     $ci=& get_instance();
     $ci->load-> database();
