@@ -31,7 +31,7 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
-    background: url('https://foto.data.kemdikbud.go.id/getImage/20328986/7.jpg');
+    background: url('https://cdn1-production-images-kly.akamaized.net/p47eE4RXKG2bi49O-sEE6hzpmAA=/1200x675/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3284063/original/034346100_1604287575-frank-mckenna-4V8JxijgZ_c-unsplash.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -119,10 +119,10 @@ nav,
             
             <a href="./auth" class="btn-sign-up">Login</a>    
         
-                <li><a href="https://www.instagram.com/smkbinanusantara_smg/">Instagram</a></li>
-                </nav>
-
-            </ul>
+            <a href="./auth/register"
+                            class="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto">
+                            Register
+                        </a>
         </div>
     </header>
 
