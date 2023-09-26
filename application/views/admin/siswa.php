@@ -106,12 +106,13 @@
                         <table class="table  table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">no </th>
-                                    <th scope="col">nama </th>
-                                    <th scope="col"> nisn </th>
-                                    <th scope="col">gender</th>
-                                    <th scope="col">kelas</th>
-                                    <th scope="col">Aksi</th>
+                                    <th class="text-left border border-black p-2 border-2">NO</th>
+                                    <th class="text-left border border-black p-2 border-2">FOTO SISWA</th>
+                                    <th class="text-left border border-black p-2 border-2">NAMA SISWA</th>
+                                    <th class="text-left border border-black p-2 border-2">NISN</th>
+                                    <th class="text-left border border-black p-2 border-2">GENDER</th>
+                                    <th class="text-left border border-black p-2 border-2">KELAS</th>
+                                    <th class="text-left border border-black p-2 border-2">AKSI</th>
                                   
                                 </tr>
                             </thead>
@@ -120,22 +121,25 @@
                                 foreach ($siswa as $row):
                                     $no++ ?>
                                     <tr>
-                                        <td>
+                                        <td class="border border-black p-2 border-2">
                                             <?php echo $no ?>
                                         </td>
-                                        <td>
+                                        <td class="border border-black p-2 border-2">
+                                        <img src="<?php echo base_url('images/siswa/'.$row->foto) ?>" width="50" height="50" alt="Foto Siswa">
+                                    </td>
+                                        <td class="border border-black p-2 border-2">
                                             <?php echo $row->nama_siswa ?>
                                         </td>
-                                        <td>
+                                        <td class="border border-black p-2 border-2">
                                             <?php echo $row->nisn ?>
                                         </td>
-                                        <td>
+                                        <td class="border border-black p-2 border-2">
                                             <?php echo $row->gender ?>
                                         </td>
-                                        <td>
+                                        <td class="border border-black p-2 border-2">
                                             <?php echo $row->id_kelas ?>
                                         </td>
-                                        <td class="text-center">
+                                        <td class="border border-black p-2 border-2">
                                             <a href="<?php echo base_url('admin/ubah_siswa/'). $row->id_siswa; ?>" class="btn btn-sm btn-primary">ubah</a>
                                             <button onclick="hapus(<?php echo $row->id_siswa ?>)" class="btn btn-sm btn-danger">Delete
                                             </button>

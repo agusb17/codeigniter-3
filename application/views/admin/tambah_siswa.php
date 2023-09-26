@@ -53,20 +53,26 @@
                                     <select name="kelas" id="kelas"
                                         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
                                         <option selected>Pilih Kelas</option>
-                                        <?php foreach($kelas as $row): ?>
-                                        <option value="<?php echo $row->id ?>">
-                                            <?php echo $row->tingkat_kelas.' '.$row->jurusan_kelas ?>
-                                        </option>
+                                        <?php foreach ($kelas as $row): ?>
+                                            <option value="<?php echo $row->id ?>">
+                                                <?php echo $row->tingkat_kelas . ' ' . $row->jurusan_kelas ?>
+                                            </option>
                                         <?php endforeach ?>
                                     </select>
-                                </div>
+                                    <div class="mb-4 col-span-1">
+                                        <label for="foto" class="block text-gray-700 font-bold mb-2">Foto Siswa</label>
+                                        <input type="file" id="foto" name="foto" accept="image/*"
+                                            class="w-full border border-gray-300 p-2 rounded-lg" required>
+                                        <small class="text-gray-500">Pilih file gambar (format: JPG, PNG, JPEG, GIF,
+                                            dll.)</small>
+                                    </div>
                                     <button type="submit"
-                                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
-                                    Tambah
-                                </button>
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
+                                        Tambah
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>

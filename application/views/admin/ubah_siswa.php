@@ -14,11 +14,11 @@
         <div class="container mt-12">
             <div class="overflow-x-auto">
             <?php foreach($siswa as $data_siswa): ?>
-                <form action="<?php echo base_url('admin/aksi_tambah_siswa') ?>" enctype="multipart/form-data"
+                <form action="<?php echo base_url('admin/ubah_siswa/') ?>" enctype="multipart/form-data"
                     method="post">
                     <div class="max-full rounded border overflow-hidden shadow-lg">
                         <div class="px-6 py-4">
-                            <p class="text-xl font-bold text-center">Tambah Siswa</p>
+                            <p class="text-xl font-bold text-center">update Siswa</p>
                             <div class="grid grid-cols-2 gap-4 mt-5">
                                 <div class="mb-4">
                                     <label class="block text-gray-700 text-sm font-bold mb-2" for="nama">
@@ -67,7 +67,7 @@
                                 </div>
                                     <button type="submit"
                                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6">
-                                    Tambah
+                                    ubah
                                 </button>
                             </div>
                         </div>

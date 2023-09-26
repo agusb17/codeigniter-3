@@ -117,10 +117,10 @@ nav,
 
             <nav>
             
-            <a href="./auth" class="btn-sign-up">Login</a>    
-        
-                <li><a href="https://www.instagram.com/smkbinanusantara_smg/">Instagram</a></li>
-                </nav>
+            <a href="./auth" class="btn-sign-up">Login</a> 
+            <br>   
+            <li><a class="btn-sign-up" href="https://www.instagram.com/smkbinanusantara_smg/">Instagram</a></li>
+             </nav>
 
             </ul>
         </div>
