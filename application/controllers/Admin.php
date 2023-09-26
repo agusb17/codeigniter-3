@@ -86,6 +86,12 @@ class Admin extends CI_Controller
   $this->load->view('admin/update_siswa', $data);
  }
 
+ public function update_siswa()
+ {
+  $data['kelas'] = $this->m_model->get_data('kelas')->result();
+  $this->load->view('admin/update_siswa', $data);
+ }
+
  public function ubah_siswa($id)
  {
   $data['siswa']=$this->m_model->get_by_id('siswa', 'id_siswa', $id)->result();  
