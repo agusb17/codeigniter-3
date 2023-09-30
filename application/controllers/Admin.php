@@ -17,8 +17,11 @@ class Admin extends CI_Controller
 
  public function index()
  {
-  $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
-  $this->load->view('admin/index');
+      $data['mapel'] = $this->m_model->get_data('mapel')->num_rows();
+      $data['siswa'] = $this->m_model->get_data('siswa')->num_rows();
+      $data['guru'] = $this->m_model->get_data('guru')->num_rows();
+      $data['kelas'] = $this->m_model->get_data('kelas')->num_rows();
+      $this->load->view('admin/index', $data);
  }
 
  // upload image
@@ -44,7 +47,37 @@ class Admin extends CI_Controller
   $data['siswa'] = $this->m_model->get_data('siswa')->result();
   $this->load->view('admin/siswa', $data);
  }
- 
+   
+ public function hapus_siswa($id)
+ {
+  $siswa = $this->m_model->get_by_id('siswa', 'id_siswa', $id)->row();
+  if($siswa){
+   if($siswa->foto !== 'User.png'){
+    $file_path = './images/siswa/' . $siswa->foto;
+
+    if(file_exists($file_path)){
+     if(unlink($file_path)){
+      //hapus file berhasil menggunakan model delete
+      $this->m_model->delete('siswa', 'id_siswa',$id);
+      redirect(base_url('admin/siswa'));
+     }else{
+      //gagal menghapus file
+      echo "gagal menghapus file.";
+     }
+    }else{
+     //file tidak di temukan
+     echo "File Tidak Di Temukan"; 
+    }
+   }else{
+    //Tanpa Hapus File User.png
+    $this->m_model->delete('siswa', 'id_siswa', $id);
+    redirect(base_url('admin/siswa'));
+   }
+  }else{
+   //Siswa Tidak Di Temukan
+   echo "Siswa Tidak Di Temukan";
+  }
+ }
  public function tambah_siswa()
  {
   $data['kelas'] = $this->m_model->get_data('kelas')->result();
@@ -78,12 +111,6 @@ class Admin extends CI_Controller
      redirect(base_url('admin/siswa'));
    }
    
- }
-
- public function update_siswa()
- {
-  $data['kelas'] = $this->m_model->get_data('kelas')->result();
-  $this->load->view('admin/update_siswa', $data);
  }
 
  public function update_siswa()
@@ -162,11 +189,11 @@ class Admin extends CI_Controller
   }
  }
 
-public function hapus_siswa($id)
- {
-     $this->m_model->delete('siswa', 'id_siswa', $id);
-     redirect(base_url('admin/siswa'));
- }
+// public function hapus_siswa($id)
+//  {
+//      $this->m_model->delete('siswa', 'id_siswa', $id);
+//      redirect(base_url('admin/siswa'));
+//  }
 
 
 }

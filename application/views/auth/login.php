@@ -30,7 +30,7 @@ body {
                 <div>
                     <div class="flex justify-between mb-2">
                         <label for="password" class="text-sm">Password</label>
-                        <a rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-400">Forgot</a>
+                        <a rel="noopener noreferrer" href="#" class="text-xs hover:underline dark:text-gray-400"></a>
                     </div>
                     <input type="password" name="password" id="password" placeholder=" password"
                         autocomplete="off"

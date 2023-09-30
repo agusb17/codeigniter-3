@@ -48,9 +48,7 @@
                                 <div class="mb-3"> 
                                     <input type="password" class="form-control" name="password" placeholder="Password" required> 
                                 </div> 
-                                <div class="text-center"> 
-                                    <button type="submit" class="btn btn-primary">Login</button> 
-                                </div> 
+                              
                             </form> 
                         </div> 
                     </div> 

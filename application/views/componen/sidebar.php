@@ -35,6 +35,12 @@
                         akun
                     </a>
                 </li>
+                <li>
+                    <a href="<?php echo base_url('keuangan'); ?>"
+                        class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
+                        keuangan
+                    </a>
+                </li>
 
                 <li>
                     <details class="group [&_summary::-webkit-details-marker]:hidden">

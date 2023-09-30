@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
+  
 
 </head>
 
@@ -63,6 +64,7 @@
                         <span class="flex-1 ml-3 whitespace-nowrap">DAFTAR SISWA</span>
 
                     </a>
+                    <a href=""></a>
                 </li>
                 <a href="<?php echo base_url('admin/akun'); ?>"
                         class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
@@ -108,29 +110,27 @@
 
         <div class="row ">
             <div class="col-3 card p-2">
-                <div class="card-body">
-                    <p>Jumlah Kelas</p>
-                    <a href="#" class="btn btn-primary d-grid gap-2">Data Lengkap</a>
+              <div class="bg-pink-500 border p-6 rounded-lg relative">
+                    <i class="fas fa-user text-gray-600 text-6xl absolute right-4 top-9"></i>
+                    <p class="text-white mb-2">Jumlah Siswa</p>
+                    <p class="text-white text-2xl font-bold">
+                        <?php echo $siswa ?>
+                    </p>
                 </div>
             </div>
+            </div>
+            <div class="row">
+             <div class="col-3 card p-2">  
+            <div class="bg-red-500 border p-6 rounded-lg relative">
+                <i class="fas fa-coins text-gray-600 text-6xl absolute right-4 top-9"></i>
+                <p class="text-white mb-2">Jumlah Saham</p>
+                <p class="text-white text-2xl font-bold">20.000
+            </div>
+            </div>
+            </div> 
+              
             <br>
-            <div class="col-3 card p-2">
-                <div class="card-body">
-                    <p>Daftar Siswa</p>
-                    <a href="#" class="btn btn-primary d-grid gap-2">Data Lengkap</a>
-                </div>
-            </div>
-            <br>
-            <div class="col-3 card p-2">
-                <div class="card-body">
-                    <p>Mapel</p>
-                    <a href="#" class="btn btn-primary d-grid gap-2">Data Lengkap</a>
-                </div>
-            </div>
-            <div class="col-3 card p-2">
-                <div class="card-body">
-                    <p>Guru</p>
-                    <a href="#" class="btn btn-primary d-grid gap-2">Data Lengkap</a>
+        
                 </div>
             </div>
         </div>
