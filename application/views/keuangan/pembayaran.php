@@ -103,10 +103,16 @@
         <div class="bg-white p-6 rounded-lg shadow-2xl">
                     <div class="flex justify-end mt-4">
 
-                        <div class="flex space-x-4">
+                        <div class="flex space-x-4 my-2">
                             <a href="<?php echo base_url('keuangan/tambah_pembayaran') ?>"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><i
-                                    class="fas fa-plus mr-2"></i> Tambah</a>
+                                    class="fas fa-plus mr-2"></i>tambah</a>
+                        </div>
+                        <br>
+                        <div class="flex space-x-4 my-2">
+                            <a href="<?php echo base_url('keuangan/export') ?>"
+                                class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"><i
+                                    class="fas fa-plus mr-2"></i>export</a>
                         </div>
                     </div>
                     <table class="min-w-full">
@@ -154,8 +160,14 @@
                         </tbody>
 
                     </table>
-                </div>
-        <br>
+                    <form class="mt-5" method="post" enctype="multipart/from-data"
+                    action="<?= base_url('keuangan/import') ?>">
+                    <input type="file" name="file" />
+                    <input type="submit" name="import"
+                        class="inline-block rounded bg-red-800 px-4 py-2 text-xs font-medium text-white hover:bg-red-450"
+                        value="import" />
+
+                </form>
         
     </div>
                     <script>
