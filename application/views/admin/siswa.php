@@ -65,7 +65,7 @@
 
                 <li>
 
-                    <a href="<?php echo base_url('Login/logout'); ?>"
+                    <a href="<?php echo base_url('auth/logout'); ?>"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
                         <span class="flex-1 ml-3 whitespace-nowrap">Log Out</span>

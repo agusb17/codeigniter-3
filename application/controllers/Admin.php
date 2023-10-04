@@ -121,10 +121,9 @@ class Admin extends CI_Controller
 
  public function ubah_siswa($id)
  {
-  $data['siswa']=$this->m_model->get_by_id('siswa', 'id_siswa', $id)->result();  
-  $data['kelas']=$this->m_model->get_data('kelas')->result();
-  $this->load->view('admin/ubah_siswa', $data);  
-
+   $data['siswa'] = $this->m_model->get_by_id('siswa', 'id_siswa', $id)->result();
+   $data['kelas'] = $this->m_model->get_data('kelas')->result();
+   $this->load->view('admin/ubah_siswa', $data);
  }
 
  public function aksi_ubah_siswa()

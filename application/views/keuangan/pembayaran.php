@@ -65,7 +65,7 @@
 
                 <li>
 
-                    <a href="<?php echo base_url('Login/logout'); ?>"
+                    <a href="<?php echo base_url('auth/logout'); ?>"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
                         <span class="flex-1 ml-3 whitespace-nowrap">Log Out</span>
@@ -102,14 +102,13 @@
         <!-- Table -->
         <div class="bg-white p-6 rounded-lg shadow-2xl">
                     <div class="flex justify-end mt-4">
-
                         <div class="flex space-x-4 my-2">
                             <a href="<?php echo base_url('keuangan/tambah_pembayaran') ?>"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"><i
                                     class="fas fa-plus mr-2"></i>tambah</a>
                         </div>
                         <br>
-                        <div class="flex space-x-4 my-2">
+                        <div class="flex space-x-4 my-2 px-4">
                             <a href="<?php echo base_url('keuangan/export') ?>"
                                 class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded"><i
                                     class="fas fa-plus mr-2"></i>export</a>
@@ -160,7 +159,7 @@
                         </tbody>
 
                     </table>
-                    <form class="mt-5" method="post" enctype="multipart/from-data"
+                    <form class="mt-5" method="post" enctype="multipart/form-data"
                     action="<?= base_url('keuangan/import') ?>">
                     <input type="file" name="file" />
                     <input type="submit" name="import"

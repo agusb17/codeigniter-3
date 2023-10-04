@@ -15,7 +15,7 @@
             </a>
             <ul class="mt-6 space-y-1">
                 <li>
-                    <a href="<?php echo base_url('admin'); ?>"
+                    <a href="<?php echo base_url('pembayaran'); ?>"
                         class="block rounded-lg px-4 py-2 text-sm font-medium text-white hover:bg-gray-700">
                         Dashboard
                     </a>
