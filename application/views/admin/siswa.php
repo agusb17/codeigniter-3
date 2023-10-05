@@ -61,7 +61,7 @@
                     </a>
                 </li>
 
-
+            
 
                 <li>
 
@@ -95,10 +95,11 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
+          
         </nav>
         <h1 class="p-4"><i>Daftar Siswa</i></h1>
         <br>
-
+        <a  href="<?php echo base_url('admin/export'); ?>" class="btn btn-success m-2">export</a>
         <div class="row ">
             <div class="col-12 card p-2">
                 <div class="card-body min-vh-100  align-items-center">
@@ -148,6 +149,15 @@
                                 <?php endforeach ?>
                             </tbody>
                         </table>
+                        <form class="mt-5" method="post" enctype="multipart/form-data"
+                        action="<?php echo base_url('admin/import'); ?>">
+                        <input type="file" name="file" />
+                        <input type="submit" name="import"
+                            class="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white"
+                            value="Import" />
+
+                    </form>
+                    <br>
                         <a  href="<?php echo base_url('admin/tambah_siswa'); ?>" class="btn btn-sm btn-warning">Tambah</a>
                     </div>
                     </form>
