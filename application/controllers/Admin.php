@@ -12,7 +12,7 @@ class Admin extends CI_Controller
   $this->load->model('m_model');
   $this->load->helper('my_helper');
   $this->load->library('upload');
-        if ($this->session->userdata('logged_in')!=true) {
+        if ($this->session->userdata('logged_in')!=true || $this->session->userdata('role') != 'admin') {
             redirect(base_url().'auth');
         }
  }
@@ -322,6 +322,28 @@ class Admin extends CI_Controller
          redirect(
              base_url('admin/ubah_siswa/' . $this->input->post('id_siswa'))
          );
+     }
+ }
+ public function guru()
+{
+    $data['guru'] = $this->m_model->get_data('guru')->result();
+    $data['kelas'] = $this->m_model->get_data('kelas')->result();
+    $data['guru'] = $this->m_model->get_data('guru')->result();
+    $data['walikelas'] = $this->m_model->get_data('walikelas')->result();
+    $this->load->view('admin/guru', $data);
+}
+
+public function export_guru()
+ {
+   $data['data_guru'] = $this->m_model->get_data('guru')->result();
+   $data['nama'] = 'guru';
+   if ($this->uri->segment(3) == "pdf") {
+       $this->load->library('pdf');
+       $this->pdf->load_view('admin/export_data_guru', $data);
+       $this->pdf->render();
+       $this->pdf->stream("data_guru.pdf", array("Attachment" => false));    
+     }else{
+       $this->load->view('admin/download_data_guru', $data);
      }
  }
 
